@@ -2,7 +2,7 @@
 
 from django.db import models
 
-class Consommation(models.Models):
+class Consommation(models.Model):
     c_name = models.CharField(max_length=100)
 
 
@@ -10,19 +10,19 @@ class Consommation(models.Models):
         return self.cons_name
 
 
-class Logement(models.Models):
+class Logement(models.Model):
     l_name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.log_name
 
 
-class Utilisateur(models.Models):
+class Utilisateur(models.Model):
     u_name = models.CharField(max_length=100)
     def __str__(self):
         return self.uti_name
 
-class Habitant(models.Models):
+class Habitant(models.Model):
     h_name = models.CharField(max_length=100)
 
     def __str__(self):
