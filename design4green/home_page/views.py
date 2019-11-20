@@ -4,14 +4,17 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from django.http import HttpResponse
 
+# MODEMS IMPORTS
+from .models import Utilisateur
+
 def index(request):
     return render(request, "index/index.html")
 
 def user_details(request, user_id):
     # try catch on one line
-    #project = get_object_or_404(Projects, pk=project_id)
+    user = get_object_or_404(Utilisateur, pk=user_id)
 
-    return render(request, 'a_project/project_detail.html', {'project': project})
+    return render(request, 'index/user_details.html', {'user': user})
 
 
 
