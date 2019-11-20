@@ -1,3 +1,3 @@
-from django.db import models
+# HOME PAGE MODELS
 
-# Create your models here.
+from django.db import models
