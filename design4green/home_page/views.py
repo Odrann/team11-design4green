@@ -5,7 +5,7 @@ from django.http import Http404
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("<h1> Test2 </h1>")
+    return render(request, "index/index.html")
 
 def conso(request):
     svg_buffer = StringIO()
