@@ -4,6 +4,9 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from django.http import HttpResponse
 
+from io import StringIO
+import cairo
+
 # MODEMS IMPORTS
 from .models import Utilisateur
 
