@@ -2,7 +2,7 @@
 {% load static %}
 <html>
     <head>
-        <title>Your profile</title>
+        <title>Your profile: {{ user.u_id }}</title>
         {% include "general/header_general.html" %}
         <link rel="stylesheet" type="text/css" href="{% static "css/home_page_style.css" %}"><link>
         <script src="{% static "script/home_page_sc.js" %}"></script>
