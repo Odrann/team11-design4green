@@ -7,7 +7,7 @@ from django.forms import forms
 
 class Consommation(models.Model):
     c_loc = models.CharField(max_length=100)
-    c_date = models.DateField(default=datetime.date.today)
+    #c_date = models.DateField(default=datetime.date.today)
     c_cons = models.CharField(max_length=100)
 
     def __srt__(self):
@@ -36,7 +36,7 @@ class Logement(models.Model):
 
 class Utilisateur(models.Model):
     u_id = models.CharField(max_length=100)
-    u_mdp = forms.CharField(max_length=32, widget=forms.PasswordInput)
+    #u_mdp = forms.CharField(max_length=32, widget=forms.PasswordInput)
     u_type = models.CharField(max_length=1)
 
     def __str__(self):
