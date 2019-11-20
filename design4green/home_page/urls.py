@@ -1,5 +1,4 @@
-#URL home_page
-# ------ V2 -- a_project -- VIEWS ------ #
+# HOME PAGE URL
 
 from django.urls import path
 from django.conf.urls import url
