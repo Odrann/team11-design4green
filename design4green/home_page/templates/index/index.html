@@ -1,1 +1,13 @@
-aaaaa
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D4G</title>
+        {% include "general/header_general.html" %}
+    </head>
+
+    <body>
+    <p>HELLLLLO</p>
+	<img src="{% static '/images/logo.jpg' %}" alt="test" />
+    </body>
+</html>
