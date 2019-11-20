@@ -6,26 +6,26 @@ from django.forms import forms
 
 
 class Consommation(models.Model):
-    c_loc = models.CharField(max_length=100, default='0')
+    c_loc = models.CharField(max_length=100, blank=False, default='somevalue')
     #c_date = models.DateField(default=datetime.date.today)
-    c_cons = models.CharField(max_length=100)
+    c_cons = models.CharField(max_length=100, blank=False, default='somevalue')
 
     #def __srt__(self):
         #return self.cons_name
 
 class Habitant(models.Model):
-    h_nom = models.CharField(max_length=100, blank=False)
+    h_nom = models.CharField(max_length=100, blank=False, default='somevalue')
     h_prenom = models.CharField(max_length=100, blank=False, default='somevalue')
 
     #def __str__(self):
         #return self.hab_name
 
 class Logement(models.Model):
-    l_name = models.CharField(max_length=100)
-    l_adresse = models.CharField(max_length=100)
-    l_pays = models.CharField(max_length=100)
-    l_ville = models.CharField(max_length=100)
-    l_cp = models.CharField(max_length=20)
+    l_name = models.CharField(max_length=100, blank=False, default='somevalue')
+    l_adresse = models.CharField(max_length=100, blank=False, default='somevalue')
+    l_pays = models.CharField(max_length=100, blank=False, default='somevalue')
+    l_ville = models.CharField(max_length=100, blank=False, default='somevalue')
+    l_cp = models.CharField(max_length=20, blank=False, default='somevalue')
 
     #FK Habok,
     #l_hablink = models.ManyToManyField(Habitant)
