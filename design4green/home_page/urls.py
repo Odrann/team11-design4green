@@ -13,6 +13,10 @@ urlpatterns = [
         # User details views
         url(r'^(?P<user_id>[0-9]+)/$', views.user_details, name='u_details'),
 
+        # About
+        # Help
+        # Logout
+
         # TESTS
         url(r'^consommation/$', views.conso, name='conso'),
     ]
