@@ -2,5 +2,4 @@ a, a:hover, a:focus {
     color: inherit;
     text-decoration: bold;
     transition: all 0.3s;
-
 }
