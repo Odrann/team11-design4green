@@ -38,6 +38,8 @@ class Utilisateur(models.Model):
     u_id = models.CharField(max_length=100, blank=False, default='somevalue')
     u_mdp = models.CharField(max_length=100, blank=False, default='123456')
     u_type = models.CharField(max_length=1, blank=False, default='U')
+    #FK Habitant
+    
     #def __str__(self):
         #return self.uti_name
 
