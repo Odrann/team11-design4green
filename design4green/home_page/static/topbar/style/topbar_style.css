@@ -8,6 +8,6 @@ a, a:hover, a:focus {
 .navbar-text {color:black;}
 
 .nav>span {
-    display: inline-block;
+    display: block;
     white-space: nowrap;
 }
