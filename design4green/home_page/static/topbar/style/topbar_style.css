@@ -9,4 +9,5 @@ a, a:hover, a:focus {
 
 .nav>span {
     display: inline-block;
+    white-space: nowrap;
 }
