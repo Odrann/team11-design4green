@@ -6,7 +6,7 @@ from django.forms import forms
 
 
 class Consommation(models.Model):
-    c_loc = models.CharField(max_length=100)
+    c_loc = models.CharField(max_length=100, default='0')
     #c_date = models.DateField(default=datetime.date.today)
     c_cons = models.CharField(max_length=100)
 
