@@ -2,5 +2,6 @@
 
 .nav>span {
     display: inline-block;
-    white-space: nowrap;
-}
+    white-space: nowrap;}
+
+.navbar { margin-bottom: 0 }
