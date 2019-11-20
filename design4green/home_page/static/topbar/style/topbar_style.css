@@ -6,3 +6,7 @@ a, a:hover, a:focus {
 
 
 .navbar-text {color:black;}
+
+.nav>li {
+    display: inline-block;
+}
