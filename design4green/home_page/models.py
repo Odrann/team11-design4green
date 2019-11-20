@@ -24,7 +24,7 @@ class Logement(models.Model):
     l_name = models.CharField(max_length=100)
     l_adresse = models.CharField(max_length=100)
     l_pays = models.CharField(max_length=100)
-    l_ville = models.Charfield(max_length=100)
+    l_ville = models.CharField(max_length=100)
     l_cp = models.CharField(max_length=20)
 
     #FK Habok,
