@@ -1,11 +1,22 @@
 # HOME PAGE VIEWS
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from django.http import HttpResponse
 
 def index(request):
     return render(request, "index/index.html")
+
+def user_details(request, user_id):
+    # try catch on one line
+    #project = get_object_or_404(Projects, pk=project_id)
+
+    return render(request, 'a_project/project_detail.html', {'project': project})
+
+
+
+
+
 
 def conso(request):
     svg_buffer = StringIO()

@@ -10,5 +10,9 @@ app_name = "homePage"
 urlpatterns = [
         #index for the home page
         url(r'^$', views.index, name='index'),
+        # User details views
+        #url(r'^(?P<user_id[0-9]+)/$', views.hp_details, name='details'),
+
+        # TESTS
         url(r'^consommation/$', views.conso, name='conso'),
     ]

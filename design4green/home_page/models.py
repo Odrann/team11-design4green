@@ -36,7 +36,7 @@ class Logement(models.Model):
 
 class Utilisateur(models.Model):
     u_id = models.CharField(max_length=100)
-    #u_mdp = forms.CharField(max_length=32, widget=forms.PasswordInput)
+    u_mdp = models.CharField(max_length=100)
     u_type = models.CharField(max_length=1)
 
     def __str__(self):
