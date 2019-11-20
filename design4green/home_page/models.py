@@ -14,8 +14,8 @@ class Consommation(models.Model):
         #return self.cons_name
 
 class Habitant(models.Model):
-    h_nom = models.CharField(max_length=100)
-    h_prenom = models.CharField(max_length=100)
+    h_nom = models.CharField(max_length=100, blank=False)
+    h_prenom = models.CharField(max_length=100, blank=False, default='somevalue')
 
     #def __str__(self):
         #return self.hab_name
