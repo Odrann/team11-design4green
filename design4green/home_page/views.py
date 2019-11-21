@@ -34,7 +34,7 @@ def pass_forget(request):
 
     if mail != '' and mail is not None:
         qs = user.objects.all()
-        qs = qs.filter(user.u_id=mail)
+        #qs = qs.filter(user.u_id=mail)
 
         logger = logging.getLogger(__name__)
         logger.info('TEST ' + qs)
