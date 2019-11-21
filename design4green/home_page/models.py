@@ -11,7 +11,7 @@ class Habitant(models.Model):
     h_prenom = models.CharField(max_length=100, blank=False, default='somevalue')
 
     def __str__(self):
-        return self.hab_name
+        return self.h_nom
 
 class Utilisateur(models.Model):
     u_id = models.CharField(max_length=100, blank=False, default='somevalue')
@@ -21,7 +21,7 @@ class Utilisateur(models.Model):
     u_hablink = models.ManyToManyField(Habitant)
 
     def __str__(self):
-        return self.uti_name
+        return self.u_id
 
 class Logement(models.Model):
     l_foyer = models.CharField(max_length=2, blank=False, default='NA')
@@ -39,7 +39,7 @@ class Logement(models.Model):
     l_hablink = models.ManyToManyField(Habitant)
 
     def __str__(self):
-        return self.log_name
+        return self.l_foyer
 
 class Consommation(models.Model):
     c_date = models.CharField(max_length=10, blank=True, null=True, default='NA')
@@ -50,7 +50,7 @@ class Consommation(models.Model):
     c_loglink = models.ManyToManyField(Logement)
 
     def __srt__(self):
-        return self.cons_name
+        return self.c_log
 
 
 class Proprietaire(models.Model):
@@ -60,6 +60,9 @@ class Proprietaire(models.Model):
 
     #link vers loc
     p_loclink = models.ManyToManyField(Logement)
+
+    def __srt__(self):
+        return self.p_nom + '|' + self.p_soc
 
 
 
