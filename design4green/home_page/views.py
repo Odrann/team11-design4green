@@ -30,5 +30,5 @@ def conso(request, user_id):
 def pass_forget(request):
     return render(request, 'recovery/recovery.html')
 
-def pass_forget(request, mail):
+def pass_forget2(request, mail):
     return render(request, 'recovery/recovery.html', {'mail': mail})
