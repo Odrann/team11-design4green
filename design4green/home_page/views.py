@@ -67,8 +67,6 @@ def pass_forget(request):
         else:
             mail = ''
 
-        mail = '' + mail + ''
-
         print('_____New pass: ' + newpass)
         print('_____For: ' + mail)
 
