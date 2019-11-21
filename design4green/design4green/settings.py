@@ -128,6 +128,6 @@ STATIC_URL = '/static/'
 
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
-EMAIL_HOST_USER = 'yazn.devereaux@iiron.us'
-EMAIL_HOST_PASSWORD = 'qyrew9R&'
+EMAIL_HOST_USER = 'd4g@trash-mail.com'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 25
