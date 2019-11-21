@@ -23,4 +23,6 @@ urlpatterns = [
         url(r'^(?P<user_id>[0-9]+)/consommation/$', views.conso, name='conso'),
 
         url(r'^recovery/$', views.pass_forget, name='pass_forget'),
+        url(r'^about/$', views.about, name='about'),
+        url(r'^help/$', views.help, name='help'),
     ]
