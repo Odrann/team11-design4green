@@ -59,9 +59,9 @@ def pass_forget(request):
         else:
             mail = ''
 
-        print(mail)
+        print('_____New pass: ' + newpass + ' for: ' + mail)
 
-        #send_mail('Mot de passe oublie', 'Votre nouveau mot de passe: ' + newpass, 'design4green.test@gmail.com', [mail], fail_silently=False,)
+        send_mail('Mot de passe oublie', 'Votre nouveau mot de passe: ' + newpass, 'design4green.test@gmail.com', [mail], fail_silently=False,)
 
         return render(request, 'recovery/recovery.html', {'mail': mail})
     else:
