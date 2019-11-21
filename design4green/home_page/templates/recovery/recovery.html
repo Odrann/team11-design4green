@@ -30,8 +30,14 @@
 							<button id="btn_envoyer" type="" class="btn float-right login_btn" disabled>Envoyer</button>
 						</div>
 					</form>
+					<form action="/" >
+						<button type="" class="btn float-right login_btn" disabled>Accueil</button>
+					</form>
 				{% else %}
 					<p>Mail envoyé à {{ mail }}</p>
+					<form action="/" >
+						<button type="" class="btn float-right login_btn" disabled>Accueil</button>
+					</form>
 				{% endif %}
             </div>
         </div>
