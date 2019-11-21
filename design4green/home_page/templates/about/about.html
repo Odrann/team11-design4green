@@ -2,10 +2,9 @@
 {% load static %}
 <html>
     <head>
-        <title>Your profile: {{ user.u_id }}</title>
+        <title>A propos de nous</title>
         {% include "general/header_general.html" %}
         <link rel="stylesheet" type="text/css" href="{% static "css/home_page_style.css" %}"><link>
-        <link rel="stylesheet" type="text/css" href="{% static "css/user_detail_style.css" %}"><link>
         <script src="{% static "script/home_page_sc.js" %}"></script>
     </head>
 
@@ -16,34 +15,14 @@
         <div class="container">
             <div class="row ud-hello">
                     <div class="col-sm">
-                        <h3 class="text-center">Details about your account</h3>
+                        <h3 class="text-center">A propos de nous !</h3>
                     </div>
             </div>
 
             <div class="row">
                 <div class="col-sm ud-cp">
                     <h4 class="text-center">Votre compte</h4>
-                    <p>Votre compte : {{ user.u_id }}</p>
-                </div>
-                <div class="col-sm ud-hb">
-                    <h4 class="text-center">Vos habitants</h4>
-                </div>
-                <div class="col-sm ud-dc">
-                    <h4 class="text-center">Vos derniers consommations</h4>
-                    <table class="table table-bordered table-striped table-hover table-sm">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th>Date</th>
-                            <th>Consumation</th>
-                        </tr>
-                        </thead>
-                        <tbody id="myTable">
-                            <tr>
-                                <td>test1</td>
-                                <td>test2</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <p>Nous sommes une petite équipe récemment créée, de base un groupe d'amis dévoué à la protection de la terre et à la préservation de mère nature.</p>
                 </div>
             </div>
         </div>
