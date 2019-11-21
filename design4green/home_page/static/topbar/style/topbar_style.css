@@ -1,12 +1,12 @@
 .navbar-text {color:white;}
 
-.nav>span {
+.topbar>span {
     display: inline-block;
     white-space: nowrap;}
 
-.navbar { margin-bottom: 20px;}
+.topbar { margin-bottom: 20px;}
 
-.navbar{
+.topbar{
     background-color: black;}
 
 .topbar {
