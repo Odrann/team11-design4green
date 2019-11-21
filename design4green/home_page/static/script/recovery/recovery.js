@@ -8,5 +8,5 @@ $( document ).ready(function() {
 		{
 			$('#btn_envoyer').attr('disabled', 'disabled');
 		}
-	}
+	});
 });
