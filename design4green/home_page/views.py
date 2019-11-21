@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.http import Http404
 from django.http import HttpResponse
 from .models import Utilisateur as user
+from .models import Habitant
 from django.conf import settings
 
 import random
@@ -20,7 +21,11 @@ def user_details(request, user_id):
     # try catch on one line
     user = get_object_or_404(Utilisateur, pk=user_id)
 
-    return render(request, 'details/user_details.html', {'user': user})
+    try:
+        h_name = Habitant.objets.get(id=user_id)
+    except Habitant.DoesNotExist:
+        raise Http404("Aucun habitant")
+    return render(request, 'details/user_details.html', {'user': user, 'h_name' : h_name})
 
 def about(request):
     return render(request, "about/about.html")
