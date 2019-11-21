@@ -36,11 +36,13 @@ def user_details(request, user_id):
 
     return render(request, 'details/user_details.html', {'user': user, 'h_name' : h_name, 'uloc': uloc})
 
-def about(request):
-    return render(request, "about/about.html")
+def about(request, user_id):
+    user = get_object_or_404(Utilisateur, pk=user_id)
+    return render(request, "about/about.html", {'user': user})
 
-def help(request):
-    return render(request, "help/help.html")
+def help(request, user_id):
+    user = get_object_or_404(Utilisateur, pk=user_id)
+    return render(request, "help/help.html", {'user': user})
 
 
 def conso(request, user_id):
@@ -83,8 +85,7 @@ def pass_forget(request):
         else:
             mail = ''
 
-        print('_____New pass: ' + newpass)
-        print('_____For: ' + mail)
+        mail = str(mail)
 
         send_mail('Mot de passe oublie', 'Votre nouveau mot de passe: ' + newpass, 'design4green.test@gmail.com', [mail], fail_silently=False,)
 

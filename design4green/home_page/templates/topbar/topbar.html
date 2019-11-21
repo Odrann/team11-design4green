@@ -16,13 +16,13 @@
    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Accueil</a>
+                <a class="nav-link" href="{% url 'homePage:u_details' user.id %}">Mon profil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">Nous</a>
+                <a class="nav-link" href="{% url 'homePage:about' user.id %}">Nous</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="/help">Aide</a>
+                <a class="nav-link" href="{% url 'homePage:help' user.id %}">Aide</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Deconnexion</a>
