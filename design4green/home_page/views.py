@@ -5,6 +5,11 @@ from django.core.mail import send_mail
 from django.http import Http404
 from django.http import HttpResponse
 from .models import Utilisateur as user
+from django.conf import settings
+
+import logging
+import random
+import string
 
 # MODEMS IMPORTS
 from .models import Utilisateur
@@ -19,10 +24,6 @@ def user_details(request, user_id):
     return render(request, 'details/user_details.html', {'user': user})
 
 
-
-
-
-
 def conso(request, user_id):
     user = get_object_or_404(Utilisateur, pk=user_id)
 
@@ -32,8 +33,16 @@ def pass_forget(request):
     mail = request.GET.get('mail')
 
     if mail != '' and mail is not None:
+        qs = user.objects.all()
+        qs = qs.filter(user.u_id=mail)
 
-        send_mail("subject", "msg", "design4green.test@gmail.com", ["odran30@gmail.com"], fail_silently=False,)
+        logger = logging.getLogger(__name__)
+        logger.info('TEST ' + qs)
+
+        stringLength = 8
+        lettersAndDigits = string.ascii_letters + string.digits
+        newpass = ''.join(random.choice(lettersAndDigits) for i in range(stringLength))
+        send_mail('Mot de passe oublie', 'Votre nouveau mot de passe: ' + newpass, 'design4green.test@gmail.com', [mail], fail_silently=False,)
 
         return render(request, 'recovery/recovery.html', {'mail': mail})
     else:
