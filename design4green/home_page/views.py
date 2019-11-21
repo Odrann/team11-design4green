@@ -33,7 +33,7 @@ def pass_forget(request):
 
     if mail != '' and mail is not None:
 
-        send_mail("subject", "msg", "D4G@epita.fr", ["odran30@gmail.com"], fail_silently=False,)
+        send_mail("subject", "msg", "D4G@epita.fr", ["odran30@gmail.com"], fail_silently=False, 'yazn.devereaux@iiron.us', 'qyrew9R&')
 
         return render(request, 'recovery/recovery.html', {'mail': mail})
     else:
