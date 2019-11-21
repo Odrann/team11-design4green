@@ -1,19 +1,10 @@
-.navbar-text {color:white;}
-
-.nav>span {
+.topbar>span {
     display: inline-block;
     white-space: nowrap;}
 
-.navbar { margin-bottom: 20px;}
-
-.navbar{
-    background-color: black;}
-/*
-.navbar.span{
-    color: white;}
-
-.navbar.li{
-    color: white;}
-
-    
- */
+.topbar {
+    margin-bottom: 20px;
+    background-color: black;
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;}
