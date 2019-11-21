@@ -8,6 +8,12 @@
 
 .navbar{
     background-color: black;}
+
+.topbar {
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;
+}
 /*
 .navbar.span{
     color: white;}
@@ -15,5 +21,5 @@
 .navbar.li{
     color: white;}
 
-    
+
  */
