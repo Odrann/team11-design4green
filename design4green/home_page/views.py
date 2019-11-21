@@ -3,6 +3,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from django.http import HttpResponse
+from .models import Utilisateur as user
 
 # MODEMS IMPORTS
 from .models import Utilisateur
@@ -27,4 +28,8 @@ def conso(request, user_id):
     return render(request, 'index/consommation.html', {'user': user})
 
 def pass_forget(request):
+    return render(request, 'recovery/recovery.html')
+
+def pass_forget_request(request, mail):
+    mail = user.
     return render(request, 'recovery/recovery.html')
