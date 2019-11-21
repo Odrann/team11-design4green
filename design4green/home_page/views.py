@@ -29,8 +29,9 @@ def conso(request, user_id):
     return render(request, 'index/consommation.html', {'user': user})
 
 def pass_forget(request):
+    send_mail("subject", "msg", "UnTestMail@epita.fr", ["krzysztof.dudek@epita.fr"], fail_silently=False,)
     return render(request, 'recovery/recovery.html')
 
 def pass_forget2(request, mail):
-    send_mail("subject", "msg", "UnTestMail@epita.fr", ["richard.la-roze@epita.fr"], fail_silently=False,)
+    send_mail("subject", "msg", "UnTestMail@epita.fr", ["krzysztof.dudek@epita.fr"], fail_silently=False,)
     return render(request, 'index/index.html', {'mail': mail})
