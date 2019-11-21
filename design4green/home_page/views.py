@@ -34,8 +34,12 @@ def pass_forget(request):
     if mail != '' and mail is not None:
         qs = user.objects.all()
         qs = qs.filter(u_id=mail)
-        mail = qs[0]
-        
+
+        if len(qs == 1):
+            mail = qs[0]
+        else:
+            mail = ''
+
         stringLength = 8
         lettersAndDigits = string.ascii_letters + string.digits
         newpass = ''.join(random.choice(lettersAndDigits) for i in range(stringLength))
