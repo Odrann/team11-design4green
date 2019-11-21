@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Your profile: {{ user.u_id }}</title>
+        {% include "general/header_general.html" %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/home_page_style.css" %}"><link>
+        <link rel="stylesheet" type="text/css" href="{% static "css/user_detail_style.css" %}"><link>
+        <script src="{% static "script/home_page_sc.js" %}"></script>
+    </head>
+
+    <body>
+        <div class="container-fullwidth">
+            {% include "../topbar/topbar.html" %}
+        </div>
+        <div class="container">
+            <div class="row ud-hello">
+                    <div class="col-sm">
+                        <h3 class="text-center">Details about your account</h3>
+                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm ud-cp">
+                    <h4 class="text-center">Votre compte</h4>
+                </div>
+                <div class="col-sm ud-hb">
+                    <h4 class="text-center">Vos habitants</h4>
+                </div>
+                <div class="col-sm ud-dc">
+                    <h4 class="text-center">Vos derniers consommations</h4>
+                    <table class="table table-bordered table-striped table-hover table-sm">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>Date</th>
+                            <th>Consumation</th>
+                        </tr>
+                        </thead>
+                        <tbody id="myTable">
+                            <tr>
+                                <td>test1</td>
+                                <td>test2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

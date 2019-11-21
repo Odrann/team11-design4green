@@ -1,0 +1,9 @@
+.topbar>span {
+    display: inline-block;
+    white-space: nowrap;}
+
+.topbar {
+    margin-bottom: 20px;
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;}

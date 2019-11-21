@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D4G</title>
+        {% include "general/header_general.html" %}
+    </head>
+
+    <body>
+    <div class='col-sm-5'>
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+    <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Annee 1', 'Annee 2', 'Annee 3', 'Annee 4', 'Annee 5'],
+            datasets: [{
+                label: 'Consommation du logement X',
+                backgroundColor: 'rgb(71, 227, 32)',
+                borderColor: 'rgb(34, 116, 14)',
+                data: [0, 10, 26, 17, 30],
+                pointRadius: 10
+            }]
+        },
+        options: {}
+    });
+    </script>
+
+
+    </body>
+</html>
