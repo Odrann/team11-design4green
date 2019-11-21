@@ -42,7 +42,7 @@ class Logement(models.Model):
         return self.log_name
 
 class Consommation(models.Model):
-    c_date = models.CharField(mx_length=10, blank=True, null=True, default='01/01/1901')
+    c_date = models.CharField(max_length=10, blank=True, null=True, default='01/01/1901')
     c_cons = models.CharField(max_length=100, blank=False, default='NA')
     c_log = models.CharField(max_length=100, blank=False, default="NA")
 
