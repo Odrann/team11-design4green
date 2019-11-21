@@ -30,7 +30,7 @@ class Logement(models.Model):
     l_nb_voie = models.CharField(max_length=4, blank=False, default='NA')
     l_voie = models.CharField(max_length=100, blank=False, default='NA')
     l_cp = models.CharField(max_length=10, blank=False, default='NA')
-    l_ville = models.CharField(max_lenght=10, blank=False, default='NA')
+    l_ville = models.CharField(max_length=10, blank=False, default='NA')
 
     #FK Habok,
     l_hablink = models.ManyToManyField(Habitant)
