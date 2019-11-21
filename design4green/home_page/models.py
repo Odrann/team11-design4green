@@ -3,15 +3,16 @@ import datetime
 
 from django.db import models
 from django.forms import forms
+from .models import Logement
 
 
 class Consommation(models.Model):
-    c_loc = models.CharField(max_length=100, blank=False, default='somevalue')
+    #c_loc = models.CharField(max_length=100, blank=False, default='somevalue')
     c_date = models.DateField(default=datetime.date.today)
     c_cons = models.CharField(max_length=100, blank=False, default='somevalue')
 
     # Link vers longement
-    #c_loglink =
+    c_loglink = models.ManyToManyField(Logement)
 
     def __srt__(self):
         return self.cons_name
@@ -31,7 +32,7 @@ class Logement(models.Model):
     l_cp = models.CharField(max_length=20, blank=False, default='somevalue')
 
     #FK Habok,
-    #l_hablink = models.ManyToManyField(Habitant)
+    l_hablink = models.ManyToManyField(Habitant)
 
     def __str__(self):
         return self.log_name
@@ -42,6 +43,7 @@ class Utilisateur(models.Model):
     u_mdp = models.CharField(max_length=100, blank=False, default='123456')
     u_type = models.CharField(max_length=1, blank=False, default='U')
     #FK Habitant
+    u_hablink = models.ManyToManyField(Habitant)
 
     def __str__(self):
         return self.uti_name
