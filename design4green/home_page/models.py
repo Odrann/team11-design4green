@@ -42,7 +42,7 @@ class Logement(models.Model):
         return self.log_name
 
 class Consommation(models.Model):
-    c_date = forms.DateField(input_formats=['%d/%m/%Y'])
+    c_date = models.DateField(input_formats=['%d/%m/%Y'])
     c_cons = models.CharField(max_length=100, blank=False, default='NA')
     c_log = models.CharField(max_length=100, blank=False, default="NA")
 
