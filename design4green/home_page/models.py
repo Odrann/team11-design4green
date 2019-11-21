@@ -54,7 +54,7 @@ class Consommation(models.Model):
 
 
 class Proprietaire(models.Model):
-    p_nom = models.CharFiaeld(mx_length=50, blank=True, null=True, default='')
+    p_nom = models.CharField(mx_length=50, blank=True, null=True, default='')
     p_pre = models.CharField(max_length=50, blank=True, null=True, default='')
     p_soc = models.CharField(max_length=50, blank=True, null=True, default='')
 
