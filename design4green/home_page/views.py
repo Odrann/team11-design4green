@@ -22,7 +22,7 @@ def user_details(request, user_id):
     user = get_object_or_404(Utilisateur, pk=user_id)
 
     try:
-        h_name = Habitant.objets.get(id=user_id)
+        h_name = Habitant.objects.get(id=user_id)
     except Habitant.DoesNotExist:
         raise Http404("Aucun habitant")
     return render(request, 'details/user_details.html', {'user': user, 'h_name' : h_name})
