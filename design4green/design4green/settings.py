@@ -128,6 +128,9 @@ STATIC_URL = '/static/'
 
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
-EMAIL_HOST_USER = 'yazn.devereaux@iiron.us'
-EMAIL_HOST_PASSWORD = 'qyrew9R&'
-EMAIL_PORT = 25
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'design4green.test@gmail.com'
+EMAIL_HOST_PASSWORD = 'ruyfgu4845258;'
