@@ -34,6 +34,6 @@ def pass_forget(request):
     return render(request, 'recovery/recovery.html')
 
 def pass_forget2(request, mail):
-    print(request)
+    print(request, ' ', mail)
     send_mail("subject", "msg", "UnTestMail@epita.fr", ["krzysztof.dudek@epita.fr"], fail_silently=False,)
     return render(request, 'index/index.html', {'mail': mail})
