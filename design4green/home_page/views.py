@@ -29,7 +29,7 @@ def user_details(request, user_id):
 
 
     try:
-        uloc = Logement.object.get(id=h_name.id)
+        uloc = Logement.objects.get(id=h_name.id)
     except Logement.DoesNotExist:
         raise Http404("Aucun Logement")
 
