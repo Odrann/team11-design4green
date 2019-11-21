@@ -51,9 +51,9 @@ class Consommation(models.Model):
 
 
 class Proprietaire(models.Model):
-    p_nom = models.CharField(max_length=50, blank=True, default='')
-    p_pre = models.CharField(max_length=50, blank=True, default='')
-    p_soc = models.CharField(max_length=50, blank=True, default='')
+    p_nom = models.CharField(max_length=50, blank=True, null=True, default='')
+    p_pre = models.CharField(max_length=50, blank=True, null=True, default='')
+    p_soc = models.CharField(max_length=50, blank=True, null=True, default='')
 
     #link vers loc
     p_loclink = models.ManyToManyField(Logement)
