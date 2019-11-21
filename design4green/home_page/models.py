@@ -7,7 +7,7 @@ from django.forms import forms
 
 class Consommation(models.Model):
     c_loc = models.CharField(max_length=100, blank=False, default='somevalue')
-    c_date = models.DateField(default=datetime.date.today)
+    #c_date = models.DateField(default=datetime.date.today)
     c_cons = models.CharField(max_length=100, blank=False, default='somevalue')
 
     def __srt__(self):
