@@ -1,7 +1,6 @@
 # HOME PAGE VIEWS
 
 from django.shortcuts import render, get_object_or_404
-from django.core.mail import send_mail
 from django.http import Http404
 from django.http import HttpResponse
 from .models import Utilisateur as user
@@ -30,10 +29,8 @@ def conso(request, user_id):
 
 def pass_forget(request):
     print(request)
-    send_mail("subject", "msg", "UnTestMail@epita.fr", ["krzysztof.dudek@epita.fr"], fail_silently=False,)
     return render(request, 'recovery/recovery.html')
 
 def pass_forget2(request, mail):
     print(request, ' ', mail)
-    send_mail("subject", "msg", "UnTestMail@epita.fr", ["krzysztof.dudek@epita.fr"], fail_silently=False,)
     return render(request, 'index/index.html', {'mail': mail})
