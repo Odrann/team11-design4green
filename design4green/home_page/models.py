@@ -22,6 +22,7 @@ class Utilisateur(models.Model):
         return self.uti_name
 
 class Logement(models.Model):
+    l_foyer = models.CharField(max_length=2, blank=False, default='NA')
     l_type = models.CharField(max_length=2, blank=False, default='NA')
     l_sur = models.CharField(max_length=4, blank=False, default='NA')
     l_nb_pieces = models.CharField(max_length=3, blank=False, default='NA')
