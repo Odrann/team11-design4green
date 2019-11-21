@@ -3,19 +3,6 @@ import datetime
 
 from django.db import models
 from django.forms import forms
-from .models import Logement
-
-
-class Consommation(models.Model):
-    #c_loc = models.CharField(max_length=100, blank=False, default='somevalue')
-    #c_date = models.DateField(default=datetime.date.today)
-    c_cons = models.CharField(max_length=100, blank=False, default='somevalue')
-
-    # Link vers longement
-    c_loglink = models.ManyToManyField(Logement)
-
-    def __srt__(self):
-        return self.cons_name
 
 class Habitant(models.Model):
     h_nom = models.CharField(max_length=100, blank=False, default='somevalue')
@@ -23,6 +10,16 @@ class Habitant(models.Model):
 
     def __str__(self):
         return self.hab_name
+
+class Utilisateur(models.Model):
+    u_id = models.CharField(max_length=100, blank=False, default='somevalue')
+    u_mdp = models.CharField(max_length=100, blank=False, default='123456')
+    u_type = models.CharField(max_length=1, blank=False, default='U')
+    #FK Habitant
+    u_hablink = models.ManyToManyField(Habitant)
+
+    def __str__(self):
+        return self.uti_name
 
 class Logement(models.Model):
     l_name = models.CharField(max_length=100, blank=False, default='somevalue')
@@ -37,14 +34,21 @@ class Logement(models.Model):
     def __str__(self):
         return self.log_name
 
+class Consommation(models.Model):
+    #c_loc = models.CharField(max_length=100, blank=False, default='somevalue')
+    #c_date = models.DateField(default=datetime.date.today)
+    c_cons = models.CharField(max_length=100, blank=False, default='somevalue')
 
-class Utilisateur(models.Model):
-    u_id = models.CharField(max_length=100, blank=False, default='somevalue')
-    u_mdp = models.CharField(max_length=100, blank=False, default='123456')
-    u_type = models.CharField(max_length=1, blank=False, default='U')
-    #FK Habitant
-    u_hablink = models.ManyToManyField(Habitant)
+    # Link vers longement
+    c_loglink = models.ManyToManyField(Logement)
 
-    def __str__(self):
-        return self.uti_name
+    def __srt__(self):
+        return self.cons_name
+
+
+
+
+
+
+
 
