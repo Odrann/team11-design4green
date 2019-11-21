@@ -21,5 +21,10 @@ def user_details(request, user_id):
 
 
 
-def conso(request):
-    return render(request, 'index/consommation.html')
+def conso(request, user_id):
+    user = get_object_or_404(Utilisateur, pk=user_id)
+
+    return render(request, 'index/consommation.html', {'user': user})
+
+def pass_forget(request):
+    return render(request, 'recovery/recovery.html')
