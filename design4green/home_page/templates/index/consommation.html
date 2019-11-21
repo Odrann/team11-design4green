@@ -9,23 +9,18 @@
     <body>
     <canvas id="myChart" width="400" height="400"></canvas>
     <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
+    var ctx = document.getElementById('myChart').getContext('3d');
     var myChart = new Chart(ctx, {
-        // The type of chart we want to create
         type: 'line',
-
-        // The data for our dataset
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['Annee 1', 'Annee 2', 'Annee 3', 'Annee 4', 'Annee 5'],
             datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
+                label: 'Consommation du logement X',
+                backgroundColor: 'rgb(71, 227, 32)',
+                borderColor: 'rgb(34, 116, 14)',
+                data: [0, 10, 26, 17, 30]
             }]
         },
-
-        // Configuration options go here
         options: {}
     });
     </script>
