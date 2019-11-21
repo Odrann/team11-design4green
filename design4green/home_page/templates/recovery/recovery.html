@@ -7,7 +7,7 @@
     <!--Made with love by Mutiullah Samim -->
 
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="{% static '/css/connection.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/default.css' %}">
 	<script src="{% static "script/recovery/recovery.js" %}"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@
                         <input id="mail" type="email" class="form-control" placeholder="@">
                     </div>
                     <div class="form-group">
-                        <button type="" class="btn float-right login_btn btn_envoyer" disabled><a class="btn_envoyer" href="{% url 'homePage:pass_forget_request' %}" disabled>Envoyer</a></button>
+                        <button id="btn_envoyer" type="" class="btn float-right login_btn" disabled>Envoyer</button>
                     </div>
                 </form>
             </div>
