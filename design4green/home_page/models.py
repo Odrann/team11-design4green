@@ -41,7 +41,8 @@ class Logement(models.Model):
 
 class Consommation(models.Model):
     c_date = models.DateField(default=datetime.date.today)
-    c_cons = models.CharField(max_length=100, blank=False, default='somevalue')
+    c_cons = models.CharField(max_length=100, blank=False, default='NA')
+    c_log = models.CharField(max_length=100, blank=False, default="NA")
 
     # Link vers longement
     c_loglink = models.ManyToManyField(Logement)
