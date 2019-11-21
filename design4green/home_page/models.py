@@ -1,5 +1,5 @@
 # HOME PAGE MODELS
-from datetime import datetime
+import datetime
 
 from django.db import models
 from django.forms import forms
@@ -7,8 +7,11 @@ from django.forms import forms
 
 class Consommation(models.Model):
     c_loc = models.CharField(max_length=100, blank=False, default='somevalue')
-    #c_date = models.DateField(default=datetime.date.today)
+    c_date = models.DateField(default=datetime.date.today)
     c_cons = models.CharField(max_length=100, blank=False, default='somevalue')
+
+    # Link vers longement
+    #c_loglink =
 
     def __srt__(self):
         return self.cons_name
