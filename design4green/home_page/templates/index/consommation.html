@@ -7,6 +7,8 @@
     </head>
 
     <body>
+    <p>Ville: {{ uloc.l_ville }} - {{ uloc.l_cp }}</p>
+    <p>Test {{ uconso.c_cons }}</p>
     <div class='col-sm-5'>
         <canvas id="myChart" width="400" height="400"></canvas>
     </div>
@@ -17,6 +19,7 @@
         data: {
             labels: ['Annee 1', 'Annee 2', 'Annee 3', 'Annee 4', 'Annee 5'],
             datasets: [{
+                label: 'Consommation du logement X',
                 backgroundColor: 'rgba(22, 180, 38, 0.3)',
                 borderColor: 'rgb(34, 116, 14)',
                 data: [0, 10, 26, 17, 30],
