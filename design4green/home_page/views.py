@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.http import Http404
 from django.http import HttpResponse
 from .models import Utilisateur as user
+from django.conf import settings
 
 # MODEMS IMPORTS
 from .models import Utilisateur
@@ -33,7 +34,7 @@ def pass_forget(request):
 
     if mail != '' and mail is not None:
 
-        send_mail("subject", "msg", "design4green.test@gmail.com", ["odran30@gmail.com"], fail_silently=False,)
+        send_mail('subject', 'msg', 'design4green.test@gmail.com', ['odran30@gmail.com'], fail_silently=False,)
 
         return render(request, 'recovery/recovery.html', {'mail': mail})
     else:
