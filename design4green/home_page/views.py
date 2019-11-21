@@ -63,7 +63,7 @@ def conso(request, user_id):
     except Consommation.DoesNotExist:
         raise Http404("Aucune conosmation pour ce longement")
 
-    return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'uconso' : unosco})
+    return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'uconso' : uconso})
 
 def pass_forget(request):
     mail = request.GET.get('mail')
