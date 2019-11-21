@@ -35,7 +35,7 @@ def pass_forget(request):
         qs = user.objects.all()
         qs = qs.filter(u_id=mail)
 
-        if len(qs == 1):
+        if len(qs) == 1:
             mail = qs[0]
         else:
             mail = ''
