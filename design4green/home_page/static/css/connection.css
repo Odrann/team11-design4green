@@ -89,11 +89,11 @@ color: white;
 margin-left: 4px;
 }
 
-a{
+a > button{
 	color: #A8D818;
 }
 
-a:hover{
+a:hover > button{
 	color: #94C418;
 }
 
