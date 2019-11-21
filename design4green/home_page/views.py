@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from .models import Utilisateur as user
 from django.conf import settings
 
+import logging
 import random
 import string
 
@@ -32,6 +33,12 @@ def pass_forget(request):
     mail = request.GET.get('mail')
 
     if mail != '' and mail is not None:
+        qs = user.objects.all()
+        qs = qs.filter(user.u_id=mail)
+
+        logger = logging.getLogger(__name__)
+        logger.info('TEST ' + qs)
+
         stringLength = 8
         lettersAndDigits = string.ascii_letters + string.digits
         newpass = ''.join(random.choice(lettersAndDigits) for i in range(stringLength))
