@@ -1,8 +1,8 @@
 # HOME PAGE MODELS
-import datetime
 
 from django.db import models
-from django.forms import forms
+
+import datetime
 
 class Habitant(models.Model):
     h_nom = models.CharField(max_length=100, blank=False, default='somevalue')
@@ -35,8 +35,7 @@ class Logement(models.Model):
         return self.log_name
 
 class Consommation(models.Model):
-    #c_loc = models.CharField(max_length=100, blank=False, default='somevalue')
-    #c_date = models.DateField(default=datetime.date.today)
+    c_date = models.DateField(default=datetime.date.today)
     c_cons = models.CharField(max_length=100, blank=False, default='somevalue')
 
     # Link vers longement
