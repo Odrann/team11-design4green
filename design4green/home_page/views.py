@@ -31,5 +31,4 @@ def pass_forget(request):
     return render(request, 'recovery/recovery.html')
 
 def pass_forget_request(request, mail):
-    mail = user.
     return render(request, 'recovery/recovery.html')
