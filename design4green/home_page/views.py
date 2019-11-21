@@ -59,7 +59,7 @@ def pass_forget(request):
         else:
             mail = ''
 
-        print mail
+        print(mail)
 
         #send_mail('Mot de passe oublie', 'Votre nouveau mot de passe: ' + newpass, 'design4green.test@gmail.com', [mail], fail_silently=False,)
 
