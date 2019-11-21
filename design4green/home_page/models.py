@@ -50,6 +50,13 @@ class Consommation(models.Model):
         return self.cons_name
 
 
+class Proprietaire(models.Model):
+    p_nom = models.CharField(max_length=50, default='')
+    p_pre = models.CharField(max_length=50, default='')
+    p_soc = models.CharField(max_length=50, default='')
+
+    #link vers loc
+    p_loclink = models.ManyToManyField(Logement)
 
 
 
