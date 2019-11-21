@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from .models import Utilisateur as user
 from .models import Habitant
 from .models import Logement
+from .models import Consommation
 from django.conf import settings
 
 import random
@@ -45,7 +46,22 @@ def help(request):
 def conso(request, user_id):
     user = get_object_or_404(Utilisateur, pk=user_id)
 
-    return render(request, 'index/consommation.html', {'user': user})
+    try:
+        h_name = Habitant.objects.get(id=user_id)
+    except Habitant.DoesNotExist:
+        raise Http404("Aucun habitant")
+
+    try:
+        uloc = Logement.objects.get(id=h_name.id)
+    except Logement.DoesNotExist:
+        raise Http404("Aucun Logement")
+
+    try:
+        uconso = Consommation.objects.get(id=uloc.id)
+    except Consommation.DoesNotExist:
+        raise Http404("Aucune conosmation pour ce longement")
+
+    return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'uconso' : 'unosco'})
 
 def pass_forget(request):
     mail = request.GET.get('mail')
