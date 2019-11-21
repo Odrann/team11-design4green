@@ -23,5 +23,4 @@ urlpatterns = [
         url(r'^(?P<user_id>[0-9]+)/consommation/$', views.conso, name='conso'),
 
         url(r'^recovery/$', views.pass_forget, name='pass_forget'),
-        url(r'^recovery(?P<mail>.+)/$', views.pass_forget2, name='pass_forget2'),
     ]

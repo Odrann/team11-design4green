@@ -28,9 +28,8 @@ def conso(request, user_id):
     return render(request, 'index/consommation.html', {'user': user})
 
 def pass_forget(request):
-    return render(request, 'recovery/recovery.html')
-
-def pass_forget2(request, mail):
     mail = request.GET.get('mail')
-    print(request, ' ', mail)
-    return render(request, 'index/index.html', {'mail': mail})
+    if mail != '' and mail is not None:
+        return render(request, 'index/index.html', {'mail': mail})
+    else:
+        return render(request, 'recovery/recovery.html')
