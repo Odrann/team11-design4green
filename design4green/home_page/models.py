@@ -22,11 +22,15 @@ class Utilisateur(models.Model):
         return self.uti_name
 
 class Logement(models.Model):
-    l_name = models.CharField(max_length=100, blank=False, default='somevalue')
-    l_adresse = models.CharField(max_length=100, blank=False, default='somevalue')
-    l_pays = models.CharField(max_length=100, blank=False, default='somevalue')
-    l_ville = models.CharField(max_length=100, blank=False, default='somevalue')
-    l_cp = models.CharField(max_length=20, blank=False, default='somevalue')
+    l_type = models.CharField(max_length=2, blank=False, default='NA')
+    l_sur = models.CharField(max_length=4, blank=False, default='NA')
+    l_nb_pieces = models.CharField(max_length=3, blank=False, default='NA')
+    l_chauff = models.CharField(max_length=50, blank=False, default='NA')
+    l_annee = models.CharField(max_length=4, blank=False, default='NA')
+    l_nb_voie = models.CharField(max_length=4, blank=False, default='NA')
+    l_voie = models.CharField(max_length=100, blank=False, default='NA')
+    l_cp = models.CharField(max_length=10, blank=False, default='NA')
+    l_ville = models.CharField(max_length=10, blank=False, default='NA')
 
     #FK Habok,
     l_hablink = models.ManyToManyField(Habitant)
