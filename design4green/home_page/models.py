@@ -42,7 +42,7 @@ class Logement(models.Model):
         return self.log_name
 
 class Consommation(models.Model):
-    c_date = models.DateField(input_formats=['%d/%m/%Y'])
+    c_date = models.CharFiaeld(mx_length=10, blank=True, null=True, default='01/01/1901')
     c_cons = models.CharField(max_length=100, blank=False, default='NA')
     c_log = models.CharField(max_length=100, blank=False, default="NA")
 
@@ -54,7 +54,7 @@ class Consommation(models.Model):
 
 
 class Proprietaire(models.Model):
-    p_nom = models.CharField(max_length=50, blank=True, null=True, default='')
+    p_nom = models.CharFiaeld(mx_length=50, blank=True, null=True, default='')
     p_pre = models.CharField(max_length=50, blank=True, null=True, default='')
     p_soc = models.CharField(max_length=50, blank=True, null=True, default='')
 
