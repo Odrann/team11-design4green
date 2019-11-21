@@ -35,14 +35,19 @@ def pass_forget(request):
         qs = user.objects.all()
         qs = qs.filter(u_id=mail)
 
-        if len(qs) == 1:
-            mail = qs[0]
-        else:
-            mail = ''
-
         stringLength = 8
         lettersAndDigits = string.ascii_letters + string.digits
         newpass = ''.join(random.choice(lettersAndDigits) for i in range(stringLength))
+
+        if len(qs) == 1:
+            mail = qs[0]
+
+            currentuser = user.objects.get(u_id=mail)
+            currentuser.u_mdp = newpass
+            currentuser.save()
+        else:
+            mail = ''
+
         #send_mail('Mot de passe oublie', 'Votre nouveau mot de passe: ' + newpass, 'design4green.test@gmail.com', [mail], fail_silently=False,)
 
         return render(request, 'recovery/recovery.html', {'mail': mail})
