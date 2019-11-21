@@ -31,4 +31,6 @@ def pass_forget(request):
     return render(request, 'recovery/recovery.html')
 
 def pass_forget2(request, mail):
-    return render(request, 'recovery/recovery.html', {'mail': mail})
+    mail = request.GET.get('mail')
+    print(request, ' ', mail)
+    return render(request, 'index/index.html', {'mail': mail})
