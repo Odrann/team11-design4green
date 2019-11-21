@@ -33,7 +33,7 @@ def pass_forget(request):
 
     if mail != '' and mail is not None:
         qs = user.objects.all()
-        qs = qs.filter(WHERE mail IN (SELECT u_id FROM Utilisateur WHERE u_id = mail))
+        qs = qs.filter(u_id=mail)
         mail = qs
 
         stringLength = 8
