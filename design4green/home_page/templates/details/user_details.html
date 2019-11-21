@@ -5,6 +5,7 @@
         <title>Your profile: {{ user.u_id }}</title>
         {% include "general/header_general.html" %}
         <link rel="stylesheet" type="text/css" href="{% static "css/home_page_style.css" %}"><link>
+        <link rel="stylesheet" type="text/css" href="{% static "css/user_detail_style.css" %}"><link>
         <script src="{% static "script/home_page_sc.js" %}"></script>
     </head>
 
@@ -13,7 +14,7 @@
             {% include "../topbar/topbar.html" %}
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row ud-hello">
                     <div class="col-sm">
                         <h3 class="text-center">Details about your account</h3>
                     </div>
