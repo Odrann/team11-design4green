@@ -6,6 +6,7 @@ from django.http import Http404
 from django.http import HttpResponse
 from .models import Utilisateur as user
 from .models import Habitant
+from .models import Logement
 from django.conf import settings
 
 import random
@@ -25,7 +26,14 @@ def user_details(request, user_id):
         h_name = Habitant.objects.get(id=user_id)
     except Habitant.DoesNotExist:
         raise Http404("Aucun habitant")
-    return render(request, 'details/user_details.html', {'user': user, 'h_name' : h_name})
+
+
+    try:
+        uloc = Logement.object.get(id=h_name.id)
+    except Logement.DoesNotExist:
+        raise Http404("Aucun Logement")
+
+    return render(request, 'details/user_details.html', {'user': user, 'h_name' : h_name, 'uloc': uloc})
 
 def about(request):
     return render(request, "about/about.html")
