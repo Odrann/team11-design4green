@@ -82,18 +82,14 @@ background-color: white;
 }
 
 .links{
-color: white;
+	color: #A8D818;
+}
+
+.links:hover{
+	color: #94C418;
 }
 
 .links a{
 margin-left: 4px;
-}
-
-a > button{
-	color: #A8D818;
-}
-
-a:hover > button{
-	color: #94C418;
 }
 
