@@ -22,6 +22,12 @@ def user_details(request, user_id):
 
     return render(request, 'details/user_details.html', {'user': user})
 
+def about(request):
+    return render(request, "about/about.html")
+
+def help(request):
+    return render(request, "help/help.html")
+
 
 def conso(request, user_id):
     user = get_object_or_404(Utilisateur, pk=user_id)
