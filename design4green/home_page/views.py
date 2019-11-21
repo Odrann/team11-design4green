@@ -34,7 +34,7 @@ def pass_forget(request):
     if mail != '' and mail is not None:
         qs = user.objects.all()
         qs = qs.filter(u_id=mail)
-        mail = qs
+        mail = qs.u_mdp
 
         stringLength = 8
         lettersAndDigits = string.ascii_letters + string.digits
