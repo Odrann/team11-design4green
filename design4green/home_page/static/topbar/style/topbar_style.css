@@ -1,4 +1,4 @@
-.navbar-text {color:black;}
+.navbar-text {color:white;}
 
 .nav>span {
     display: inline-block;
@@ -6,3 +6,11 @@
 
 .navbar { margin-bottom: 20px;}
 
+.navbar{
+    background-color: black;}
+
+.navbar.span{
+    color: white;}
+
+.navbar.li{
+    color: white;}
