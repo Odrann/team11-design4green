@@ -7,18 +7,18 @@ from django.forms import forms
 
 class Consommation(models.Model):
     c_loc = models.CharField(max_length=100, blank=False, default='somevalue')
-    #c_date = models.DateField(default=datetime.date.today)
+    c_date = models.DateField(default=datetime.date.today)
     c_cons = models.CharField(max_length=100, blank=False, default='somevalue')
 
-    #def __srt__(self):
-        #return self.cons_name
+    def __srt__(self):
+        return self.cons_name
 
 class Habitant(models.Model):
     h_nom = models.CharField(max_length=100, blank=False, default='somevalue')
     h_prenom = models.CharField(max_length=100, blank=False, default='somevalue')
 
-    #def __str__(self):
-        #return self.hab_name
+    def __str__(self):
+        return self.hab_name
 
 class Logement(models.Model):
     l_name = models.CharField(max_length=100, blank=False, default='somevalue')
@@ -30,8 +30,8 @@ class Logement(models.Model):
     #FK Habok,
     #l_hablink = models.ManyToManyField(Habitant)
 
-    #def __str__(self):
-        #return self.log_name
+    def __str__(self):
+        return self.log_name
 
 
 class Utilisateur(models.Model):
@@ -40,6 +40,6 @@ class Utilisateur(models.Model):
     u_type = models.CharField(max_length=1, blank=False, default='U')
     #FK Habitant
 
-    #def __str__(self):
-        #return self.uti_name
+    def __str__(self):
+        return self.uti_name
 
