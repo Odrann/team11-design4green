@@ -10,9 +10,7 @@
     <div class="container-fullwidth">
         {% include "../topbar/topbar.html" %}
     </div>
-    <p>Ville: {{ uloc.l_ville }} - {{ uloc.l_cp }}</p>
-    <p>Test {{ uconso.c_cons }}</p>
-
+    {{ uloc.l_ville }} - {{ uloc.l_cp }}
     <tbody id="myTable">
     {% for item in all_conso %}
         <tr>
@@ -26,13 +24,19 @@
         <canvas id="myChart" width="400" height="400"></canvas>
     </div>
     <script>
+    var listData = [];
+    for each (v in all_conso) {
+        listData.append(v.c_date);
+    }
+    console.log(listData);
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: ['Annee 1', 'Annee 2', 'Annee 3', 'Annee 4', 'Annee 5'],
             datasets: [{
-                label: 'Consommation du logement X',
+                label: 'Votre consommation',
                 backgroundColor: 'rgba(22, 180, 38, 0.3)',
                 borderColor: 'rgb(34, 116, 14)',
                 data: [0, 10, 26, 17, 30],
