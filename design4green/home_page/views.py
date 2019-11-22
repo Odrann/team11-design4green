@@ -25,7 +25,7 @@ def index(request):
         try:
             searchuser = Utilisateur.objects.get(u_id=usr)
         except Utilisateur.DoesNotExist:
-            raise Http404("Aucun user")
+            return render(request, "index/index.html")
 
         print(searchuser)
         print(searchuser.id)
