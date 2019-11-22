@@ -21,15 +21,16 @@ def index(request):
 
 def user_details(request, user_id):
     # try catch on one line
-    user = get_object_or_404(Utilisateur, id=user_id)
-
-
-    #h_name = Habitant.objects.get(u_hablink=user_id)
-    h_name = get_object_or_404(Utilisateur, u_hablink=user.id)
-    print(h_name.h_nom)
+    user = get_object_or_404(Utilisateur, pk=user_id)
 
     try:
-        uloc = Logement.objects.get(l_hablink=h_name.id)
+        h_name = Habitant.objects.get(id=user_id)
+    except Habitant.DoesNotExist:
+        raise Http404("Aucun habitant")
+
+
+    try:
+        uloc = Logement.objects.get(id=h_name.id)
     except Logement.DoesNotExist:
         raise Http404("Aucun Logement")
 
