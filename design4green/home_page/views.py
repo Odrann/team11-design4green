@@ -24,7 +24,7 @@ def index(request):
     if (usr != '' and usr is not None) or (mdp != '' and mdp is not None):
         try:
             searchuser = Utilisateur.objects.get(u_id=usr)
-        except Habitant.DoesNotExist:
+        except Utilisateur.DoesNotExist:
             raise Http404("Aucun user")
 
         print(searchuser)
