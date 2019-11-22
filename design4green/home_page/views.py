@@ -31,7 +31,22 @@ def index(request):
         print(searchuser.id)
 
         if searchuser != '' and searchuser is not None:
-            return render(request, "details/user_details.html", {'user_id': searchuser.id})
+            user = get_object_or_404(Utilisateur, pk=searchuser.id)
+
+            try:
+                h_name = Habitant.objects.get(id=searchuser.id)
+            except Habitant.DoesNotExist:
+                raise Http404("Aucun habitant")
+
+            try:
+                uloc = Logement.objects.get(id=h_name.id)
+            except Logement.DoesNotExist:
+                raise Http404("Aucun Logement")
+
+            all_conso = Consommation.objects.all()
+            all_conso = all_conso.filter(c_log=searchuser.id).order_by('id')[:5]
+
+            return render(request, "details/user_details.html", {'user': user, 'h_name' : h_name, 'uloc': uloc, 'all_conso': all_conso})
         else:
             return render(request, "index/index.html")
     else:
