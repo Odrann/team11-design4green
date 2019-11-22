@@ -21,11 +21,14 @@ def index(request):
     user = request.POST.get('user')
     mdp = request.POST.get('mdp')
 
-    searchuser = Utilisateur.objects.get(u_id=user)
-    searchpass = searchuser.objects.get(u_mdp=mdp)
+    if (user != '' and user is not None) or (mdp != '' and mdp is not None):
+        searchuser = Utilisateur.objects.get(u_id=user)
+        searchpass = searchuser.objects.get(u_mdp=mdp)
 
-    if searchuser != '' and searchuser is not None and searchpass != '' and searchpass is not None:
-        return render(request, "details/user_details.html", searchuser.id)
+        if searchuser != '' and searchuser is not None and searchpass != '' and searchpass is not None:
+            return render(request, "details/user_details.html", searchuser.id)
+        else:
+            return render(request, "index/index.html")
     else:
         return render(request, "index/index.html")
 
