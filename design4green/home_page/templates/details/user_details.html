@@ -22,7 +22,7 @@
             <hr>
             <div class="row">
                 <div class="col-sm ud-cp">
-                    <h4 class="text-center">Votre compte</h4>
+                    <h4 class="text-center">Votre compte:</h4>
                     <p>Votre compte : {{ user.u_id }}</p>
                     <p>Votre nom: {{ h_name.h_nom }}</p>
                     <p>Votre prenom: {{ h_name.h_prenom }}</p>
@@ -30,16 +30,21 @@
 
                 <hr class="hrvertical">
 
-
                 <div class="col-sm ud-hb">
                     <h4 class="text-center">Votre bien:</h4>
-                    <p>Ville: {{ uloc.l_ville }} - {{ uloc.l_cp }}</p>
+                    <p>
+                    <table class="table table-hover">
+                        <tr>
+                            <td>Ville: {{ uloc.l_ville }} - {{ uloc.l_cp }}</td>
+                            
+                        </tr>
+                    </table>
                 </div>
 
                 <hr class="hrvertical">
 
                 <div class="col-sm ud-dc">
-                    <h4 class="text-center">Vos derniers consommations</h4>
+                    <h4 class="text-center">Vos derniers consommations:</h4>
                     <table class="table table-hover">
                         <thead>
                         <tr>
