@@ -72,6 +72,7 @@ def conso(request, user_id):
         listConso.append(item.c_cons)
 
     print(listDate)
+    print(listConso)
 
     return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'listDate': listDate, 'listConso': listConso})
 
