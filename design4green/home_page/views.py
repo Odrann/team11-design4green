@@ -28,13 +28,15 @@ def user_details(request, user_id):
     except Habitant.DoesNotExist:
         raise Http404("Aucun habitant")
 
-
     try:
         uloc = Logement.objects.get(id=h_name.id)
     except Logement.DoesNotExist:
         raise Http404("Aucun Logement")
 
-    return render(request, 'details/user_details.html', {'user': user, 'h_name' : h_name, 'uloc': uloc})
+    all_conso = Consommation.objects.all()
+    all_conso = all_conso.filter(c_log__contains=user_id)
+
+    return render(request, 'details/user_details.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'all_conso': all_conso})
 
 def about(request, user_id):
     user = get_object_or_404(Utilisateur, pk=user_id)
