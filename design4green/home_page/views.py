@@ -36,6 +36,8 @@ def user_details(request, user_id):
     all_conso = Consommation.objects.all()
     all_conso = all_conso.filter(c_log__contains=user_id)
 
+    print(all_conso)
+
     return render(request, 'details/user_details.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'all_conso': all_conso})
 
 def about(request, user_id):
