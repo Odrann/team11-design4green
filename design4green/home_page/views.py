@@ -73,6 +73,7 @@ def conso(request, user_id):
         listConso.append(item.c_cons)
 
 
+    listDate = json.dumps(listDate)
     listConso = list(map(int, listConso))
 
     print(listDate)
