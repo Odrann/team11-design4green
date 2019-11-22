@@ -24,22 +24,16 @@
         <canvas id="myChart" width="400" height="400"></canvas>
     </div>
     <script>
-    var listData = [];
-    for each (v in {{ all_conso }}) {
-        listData.append(v.c_date);
-    }
-    console.log(listData);
-
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Annee 1', 'Annee 2', 'Annee 3', 'Annee 4', 'Annee 5'],
+            labels: {{ listDate }},
             datasets: [{
                 label: 'Votre consommation',
                 backgroundColor: 'rgba(22, 180, 38, 0.3)',
                 borderColor: 'rgb(34, 116, 14)',
-                data: [0, 10, 26, 17, 30],
+                data: {{ listConso }},
                 pointRadius: 6
             }]
         },

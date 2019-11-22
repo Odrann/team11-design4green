@@ -64,7 +64,14 @@ def conso(request, user_id):
     all_conso = Consommation.objects.all()
     all_conso = all_conso.filter(c_log=user_id).order_by('id')[:14]
 
-    return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'all_conso': all_conso})
+    listDate = []
+    listConso = []
+
+    for item in all_conso:
+        listDate.append(item.c_date)
+        listConso.append(item.c_cons)
+
+    return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'listDate': listDate, 'listConso': listConso})
 
 def pass_forget(request):
     mail = request.GET.get('mail')
