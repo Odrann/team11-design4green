@@ -23,11 +23,9 @@ def user_details(request, user_id):
     # try catch on one line
     user = get_object_or_404(Utilisateur, id=user_id)
 
-    try:
-        h_name = Habitant.objects.get(u_hablink=user_id)
-    except Habitant.DoesNotExist:
-        raise Http404("Aucun habitant")
 
+        #h_name = Habitant.objects.get(u_hablink=user_id)
+    h_name = get_object_or_404(Utilisateur, u_hablink=user.id)
     try:
         uloc = Logement.objects.get(l_hablink=h_name.id)
     except Logement.DoesNotExist:
