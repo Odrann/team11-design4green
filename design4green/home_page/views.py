@@ -18,7 +18,16 @@ import string
 from .models import Utilisateur
 
 def index(request):
-    return render(request, "index/index.html")
+    user = request.POST.get('user')
+    mdp = request.POST.get('mdp')
+
+    searchuser = Utilisateur.objects.get(u_id=user)
+    searchpass = searchuser.objects.get(u_mdp=mdp)
+
+    if searchuser != '' and searchuser is not None and searchpass != '' and searchpass is not None:
+        return render(request, "details/user_details.html", searchuser.id)
+    else:
+        return render(request, "index/index.html")
 
 def user_details(request, user_id):
     # try catch on one line
