@@ -18,7 +18,7 @@ class Utilisateur(models.Model):
     u_mdp = models.CharField(max_length=100, blank=False, default='123456')
     u_type = models.CharField(max_length=1, blank=False, default='U')
     #FK Habitant
-    u_hablink = models.ForeignKey(Habitant, related_name="ref1", on_delete=models.CASCADE)
+    u_hablink = models.ForeignKey(Habitant, related_name="ref1", on_delete=models.CASCADE, default='NA')
 
     def __str__(self):
         return self.u_id
