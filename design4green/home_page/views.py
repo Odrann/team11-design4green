@@ -71,6 +71,8 @@ def conso(request, user_id):
         listDate.append(item.c_date)
         listConso.append(item.c_cons)
 
+    print(listDate)
+
     return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'listDate': listDate, 'listConso': listConso})
 
 def pass_forget(request):
