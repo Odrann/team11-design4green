@@ -59,8 +59,8 @@ def conso(request, user_id):
         raise Http404("Aucun Logement")
 
     try:
-        uconso = []
-        uconso.append(Consommation.objects.get(c_loglink=uloc.id))
+        print(Consommation.objects.get(c_loglink=uloc.id))
+        uconso = ''
     except Consommation.DoesNotExist:
         raise Http404("Aucune conosmation pour ce longement")
 
