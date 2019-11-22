@@ -10,29 +10,36 @@
     <div class="container-fullwidth">
         {% include "../topbar/topbar.html" %}
     </div>
-    {{ uloc.l_ville }} - {{ uloc.l_cp }}
-
-    <div class='col-sm-5'>
-        <canvas id="myChart" width="800" height="400"></canvas>
+    <div class="container">
+        <div class="row ud-hello">
+            <div class="col-md">
+                <h3 class="text-center">Consommation pour votre foyer à {{ uloc.l_ville }} - {{ uloc.l_cp }}</h3>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class='col-md-9'>
+                <canvas id="myChart" width="800" height="400"></canvas>
+            </div>
+            <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: {{ listDate|safe }},
+                    datasets: [{
+                        label: 'Votre consommation',
+                        backgroundColor: 'rgba(22, 180, 38, 0.3)',
+                        borderColor: 'rgb(34, 116, 14)',
+                        data: {{ listConso }},
+                        pointRadius: 6
+                    }]
+                },
+                options: {}
+            });
+            </script>
+        </div>
     </div>
-    <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: {{ listDate|safe }},
-            datasets: [{
-                label: 'Votre consommation',
-                backgroundColor: 'rgba(22, 180, 38, 0.3)',
-                borderColor: 'rgb(34, 116, 14)',
-                data: {{ listConso }},
-                pointRadius: 6
-            }]
-        },
-        options: {}
-    });
-    </script>
-
 
     </body>
 </html>
