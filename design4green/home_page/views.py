@@ -36,8 +36,6 @@ def user_details(request, user_id):
     all_conso = Consommation.objects.all()
     all_conso = all_conso.filter(c_log=user_id).order_by('id')[:5]
 
-    print(all_conso)
-
     return render(request, 'details/user_details.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'all_conso': all_conso})
 
 def about(request, user_id):
@@ -50,9 +48,23 @@ def help(request, user_id):
 
 
 def conso(request, user_id):
+    # try catch on one line
     user = get_object_or_404(Utilisateur, pk=user_id)
 
-    return render(request, 'index/consommation.html')
+    try:
+        h_name = Habitant.objects.get(id=user_id)
+    except Habitant.DoesNotExist:
+        raise Http404("Aucun habitant")
+
+    try:
+        uloc = Logement.objects.get(id=h_name.id)
+    except Logement.DoesNotExist:
+        raise Http404("Aucun Logement")
+
+    all_conso = Consommation.objects.all()
+    all_conso = all_conso.filter(c_log=user_id).order_by('id')[:5]
+
+    return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'all_conso': all_conso})
 
 def pass_forget(request):
     mail = request.GET.get('mail')
