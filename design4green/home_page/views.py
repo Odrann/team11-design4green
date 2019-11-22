@@ -24,7 +24,7 @@ def user_details(request, user_id):
     user = get_object_or_404(Utilisateur, id=user_id)
 
 
-        #h_name = Habitant.objects.get(u_hablink=user_id)
+    #h_name = Habitant.objects.get(u_hablink=user_id)
     h_name = get_object_or_404(Utilisateur, u_hablink=user.id)
     try:
         uloc = Logement.objects.get(l_hablink=h_name.id)
