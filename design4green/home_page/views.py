@@ -18,11 +18,11 @@ import string
 from .models import Utilisateur
 
 def index(request):
-    user = request.POST.get('user')
+    usr = request.POST.get('user')
     mdp = request.POST.get('mdp')
 
-    if (user != '' and user is not None) or (mdp != '' and mdp is not None):
-        searchuser = Utilisateur.objects.get(u_id=user)
+    if (usr != '' and usr is not None) or (mdp != '' and mdp is not None):
+        searchuser = Utilisateur.objects.get(u_id=usr)
 
         if searchuser != '' and searchuser is not None:
             return render(request, "details/user_details.html", searchuser.id)
