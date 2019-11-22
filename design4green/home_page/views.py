@@ -34,7 +34,7 @@ def user_details(request, user_id):
         raise Http404("Aucun Logement")
 
     all_conso = Consommation.objects.all()
-    all_conso = all_conso.filter(c_log=user_id)
+    all_conso = all_conso.filter(c_log=user_id).order_by('-id')[4]
 
     print(all_conso)
 
