@@ -75,9 +75,6 @@ def conso(request, user_id):
 
     listConso = list(map(int, listConso))
 
-    print(listDate)
-    print(listConso)
-
     return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'listDate': listDate, 'listConso': listConso})
 
 def pass_forget(request):
