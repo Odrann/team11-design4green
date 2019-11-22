@@ -21,7 +21,7 @@ def index(request):
 
 def user_details(request, user_id):
     # try catch on one line
-    user = get_object_or_404(Utilisateur, pk=user_id)
+    user = get_object_or_404(Utilisateur, u_hablink=user_id)
 
     try:
         h_name = Habitant.objects.get(id=user_id)
