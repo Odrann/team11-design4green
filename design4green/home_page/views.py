@@ -49,25 +49,7 @@ def help(request, user_id):
 def conso(request, user_id):
     user = get_object_or_404(Utilisateur, pk=user_id)
 
-    try:
-        h_name = Habitant.objects.get(id=user_id)
-    except Habitant.DoesNotExist:
-        raise Http404("Aucun habitant")
-
-    try:
-        uloc = Logement.objects.get(id=h_name.id)
-    except Logement.DoesNotExist:
-        raise Http404("Aucun Logement")
-
-    try:
-        print(Consommation.objects.filter(c_loglink=uloc.id))
-        uconso = Consommation.objects.all()
-        uconso = uconso.filter(c_loglink=uloc.id)
-    except (Consommation.DoesNotExist, MultipleObjectsReturned):
-        pass
-        raise Http404("Aucune conosmation pour ce longement")
-
-    return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'uconso' : uconso})
+    return render(request, 'index/consommation.html')
 
 def pass_forget(request):
     mail = request.GET.get('mail')
