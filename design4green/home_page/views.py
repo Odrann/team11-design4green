@@ -31,7 +31,7 @@ def index(request):
         print(searchuser.id)
 
         if searchuser != '' and searchuser is not None:
-            return render(request, "details/user_details.html", searchuser.id)
+            return render(request, "details/user_details.html", {'user_id': searchuser.id})
         else:
             return render(request, "index/index.html")
     else:
