@@ -1,6 +1,7 @@
 # HOME PAGE VIEWS
 
-from django.shortcuts import render, get_object_or_404
+from django.core.exception import ObjectDoesNotExist, MultipleObjectsReturned
+from django.shortcuts import render, get_object_or_404,
 from django.core.mail import send_mail
 from django.http import Http404
 from django.http import HttpResponse
@@ -62,7 +63,8 @@ def conso(request, user_id):
         print(Consommation.objects.filter(c_loglink=uloc.id))
         uconso = Consommation.objects.all()
         uconso = uconso.filter(c_loglink=uloc.id)
-    except Consommation.DoesNotExist:
+    except (Consommation.DoesNotExist, MultipleObjectsReturned):
+        pass
         raise Http404("Aucune conosmation pour ce longement")
 
     return render(request, 'index/consommation.html', {'user': user, 'h_name' : h_name, 'uloc': uloc, 'uconso' : uconso})
