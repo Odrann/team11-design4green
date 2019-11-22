@@ -48,10 +48,11 @@
                         </tr>
                         </thead>
                         <tbody id="myTable">
+                            {% for item in all_conso %}
                             <tr>
-                                <td>test1</td>
-                                <td>test2</td>
+                                <td>{{ item.c_cons }}</td>
                             </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
 
