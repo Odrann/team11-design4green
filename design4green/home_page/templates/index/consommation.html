@@ -11,14 +11,6 @@
         {% include "../topbar/topbar.html" %}
     </div>
     {{ uloc.l_ville }} - {{ uloc.l_cp }}
-    <tbody id="myTable">
-    {% for item in all_conso %}
-        <tr>
-            <td>{{ item.c_date }}</td>
-            <td>{{ item.c_cons }}</td>
-        </tr>
-    {% endfor %}
-    </tbody>
 
     <div class='col-sm-5'>
         <canvas id="myChart" width="400" height="400"></canvas>
