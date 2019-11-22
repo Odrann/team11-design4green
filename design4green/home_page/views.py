@@ -22,7 +22,13 @@ def index(request):
     mdp = request.POST.get('mdp')
 
     if (usr != '' and usr is not None) or (mdp != '' and mdp is not None):
-        searchuser = Utilisateur.objects.get(u_id=usr)
+        try:
+            searchuser = Utilisateur.objects.get(u_id=usr)
+        except Habitant.DoesNotExist:
+            raise Http404("Aucun user")
+
+        print(searchuser)
+        print(searchuser.id)
 
         if searchuser != '' and searchuser is not None:
             return render(request, "details/user_details.html", searchuser.id)
