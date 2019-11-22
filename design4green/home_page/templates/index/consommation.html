@@ -28,7 +28,7 @@
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: {{ listDate }},
+            labels: {{ listDate|escapejs }},
             datasets: [{
                 label: 'Votre consommation',
                 backgroundColor: 'rgba(22, 180, 38, 0.3)',
