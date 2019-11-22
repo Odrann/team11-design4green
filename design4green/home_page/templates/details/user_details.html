@@ -23,9 +23,21 @@
             <div class="row">
                 <div class="col-sm ud-cp">
                     <h4 class="text-center">Votre compte:</h4>
-                    <p>Votre compte : {{ user.u_id }}</p>
-                    <p>Votre nom: {{ h_name.h_nom }}</p>
-                    <p>Votre prenom: {{ h_name.h_prenom }}</p>
+                    <table class="table table-hover">
+                        <tr>
+                            <td>Votre compte: </td>
+                            <td>{{ user.u_id }}</td>
+                        </tr>
+                        <tr>
+                            <td>Votre nom: </td>
+                            <td>{{ h_name.h_nom }}</td>
+                        </tr>
+                        <tr>
+                            <td>Votre prenom:</td>
+                            <td>{{ h_name.h_prenom }}</td>
+                        </tr>
+                    </table>
+
                 </div>
 
                 <hr class="hrvertical">
