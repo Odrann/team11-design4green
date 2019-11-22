@@ -71,6 +71,10 @@ def conso(request, user_id):
         listDate.append(item.c_date)
         listConso.append(item.c_cons)
 
+
+    listDate = list(map(str, listDate))
+    listConso = list(map(int, listConso))
+
     print(listDate)
     print(listConso)
 
