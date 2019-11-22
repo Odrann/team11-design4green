@@ -26,8 +26,8 @@ def user_details(request, user_id):
 
     #h_name = Habitant.objects.get(u_hablink=user_id)
     h_name = get_object_or_404(Utilisateur, u_hablink=user.id)
-    print(h_name)
-    
+    print(h_name.h_nom)
+
     try:
         uloc = Logement.objects.get(l_hablink=h_name.id)
     except Logement.DoesNotExist:
